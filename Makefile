@@ -1,2 +1,2 @@
-run_gastby:
-	gatsby develop
+all:
+	@gatsby develop
