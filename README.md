@@ -6,6 +6,12 @@
 <h1 align="center">
   Gatsby Minimal Starter
 </h1>
+## How to run dev
+
+```shell
+make
+```
+
 
 ## 🚀 Quick start
 
