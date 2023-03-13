@@ -7,7 +7,7 @@
   Gatsby Minimal Starter
 </h1>
 
-## How to run dev
+## How to run
 
 ```shell
 make
