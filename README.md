@@ -20,7 +20,7 @@ npm run build
 
 npm run deploy
 
-http://kyles-blog.s3-website-us-east-1.amazonaws.com
+kyleskudlarek.com
 
 ## Quick start
 
