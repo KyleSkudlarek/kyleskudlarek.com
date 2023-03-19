@@ -15,6 +15,12 @@ is an alias to run the command `gatsby develop`
 make
 ```
 
+## How to deploy to AWS S3
+npm run build
+
+npm run deploy
+
+http://kyles-blog.s3-website-us-east-1.amazonaws.com
 
 ## Quick start
 

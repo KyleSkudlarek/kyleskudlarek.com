@@ -14,5 +14,11 @@ module.exports = {
             },
         },
         "gatsby-plugin-mdx",
+        {
+            resolve: `gatsby-plugin-s3`,
+            options: {
+                bucketName: "kyleskudlarek.com",
+            },
+        },
     ],
 };
