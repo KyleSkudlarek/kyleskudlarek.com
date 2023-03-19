@@ -1,3 +1,7 @@
+## How To Install Pre-requisites
+
+`npm install --global yarn`
+
 
 ## How To Start Dev Server
 Run the `make` command from terminal to start the
