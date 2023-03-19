@@ -20,8 +20,8 @@ npm run build
 
 npm run deploy
 
-kyleskudlarek.com
-
+[https://kyleskudlarek.com
+](https://kyleskudlarek.com)
 ## Quick start
 
 1.  **Create a Gatsby site.**
