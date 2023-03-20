@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 const Container = styled.div`
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -49,13 +50,6 @@ const NavLinkText = styled(props => <Link {...props} />)`
     color: #FFFFFF;
 `;
 
-const SiteTitle = styled.header`
-    font-size: 3rem;
-    color: gray;
-    font-weight: 700;
-    margin-bottom: 3rem;
-`;
-
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -72,7 +66,6 @@ const Layout = ({ pageTitle, children }) => {
       <React.Fragment>
         <GlobalStyle/>
         <Container>
-            <SiteTitle>{data.site.siteMetadata.title}</SiteTitle>
             <nav>
                 <NavLinks>
                     <NavLinkItem>

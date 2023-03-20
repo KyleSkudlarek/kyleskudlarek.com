@@ -1,6 +1,12 @@
 module.exports = {
     siteMetadata: {
-        title: "My Super Cool Blog",
+        title: "Kyle Skudlarek",
+        author: {
+            name: 'Kyle Skudlarek',
+        },
+        siteUrl: 'https://www.kyleskudlarek.com',
+        description:
+          'Software engineer and designer. This is my personal website.',
     },
     plugins: [
         "gatsby-plugin-image",
