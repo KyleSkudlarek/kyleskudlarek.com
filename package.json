@@ -27,8 +27,16 @@
     "gatsby-plugin-sitemap": "^6.7.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "styled-reset": "^4.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "2.8.4"
   }
 }
