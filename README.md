@@ -16,9 +16,10 @@ make
 ```
 
 ## How to deploy to AWS S3
+```
 npm run build
-
 npm run deploy
+```
 
 [https://kyleskudlarek.com
 ](https://kyleskudlarek.com)

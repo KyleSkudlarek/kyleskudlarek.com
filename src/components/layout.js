@@ -1,13 +1,38 @@
 import * as React from 'react'
+import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import {
-    container,
-    heading,
-    navLinks,
-    navLinkItem,
-    navLinkText,
-    siteTitle,
-} from './layout.module.css'
+
+const Container = styled.div`
+    margin: auto;
+    max-width: 500px;
+    font-family: sans-serif;
+`;
+
+const Heading = styled.h1`
+    color: rebeccapurple;
+`;
+
+const NavLinks = styled.ul`
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+`;
+
+const NavLinkItem = styled.li`
+    padding-right: 2rem;
+`;
+
+const NavLinkText = styled(props => <Link {...props} />)`
+    color: black;
+`;
+
+const SiteTitle = styled.header`
+    font-size: 3rem;
+    color: gray;
+    font-weight: 700;
+    margin: 3rem 0;
+`;
+
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -21,32 +46,34 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
     return (
-        <div className={container}>
-            <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+        <Container>
+            <SiteTitle>{data.site.siteMetadata.title}</SiteTitle>
             <nav>
-                <ul className={navLinks}>
-                    <li className={navLinkItem}>
-                        <Link to="/" className={navLinkText}>
+                <NavLinks>
+                    <NavLinkItem>
+                        <NavLinkText to="/">
                             Home
-                        </Link>
-                    </li>
-                    <li className={navLinkItem}>
-                        <Link to="/about" className={navLinkText}>
+                        </NavLinkText>
+                    </NavLinkItem>
+                    <NavLinkItem>
+                        <NavLinkText to="/about">
                             About
-                        </Link>
-                    </li>
-                    <li className={navLinkItem}>
-                        <Link to="/blog" className={navLinkText}>
+                        </NavLinkText>
+                    </NavLinkItem>
+                    <NavLinkItem>
+                        <NavLinkText to="/blog">
                             Blog
-                        </Link>
-                    </li>
-                </ul>
+                        </NavLinkText>
+                    </NavLinkItem>
+                </NavLinks>
             </nav>
             <main>
-                <h1 className={heading}>{pageTitle}</h1>
+                <Heading>
+                    {pageTitle}
+                </Heading>
                 {children}
             </main>
-        </div>
+        </Container>
     )
 }
 
