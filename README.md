@@ -2,6 +2,7 @@
 
 `npm install --global yarn`
 
+`npm install`
 
 ## How To Start Dev Server
 Run the `make` command from terminal to start the
