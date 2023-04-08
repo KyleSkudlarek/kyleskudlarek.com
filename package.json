@@ -26,6 +26,7 @@
     "gatsby-plugin-s3": "^0.3.8",
     "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-plugin-sitemap": "^6.7.0",
+    "gatsby-plugin-styled-components": "^6.8.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
     "normalize.css": "^8.0.1",
@@ -35,6 +36,7 @@
     "styled-reset": "^4.4.5"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^2.1.1",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-react": "^7.32.2",
