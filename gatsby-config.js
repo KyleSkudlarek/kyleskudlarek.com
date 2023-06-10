@@ -9,9 +9,11 @@ module.exports = {
           'Software engineer and designer. This is my personal website.',
     },
     plugins: [
+        "gatsby-plugin-preload-fonts",
         "gatsby-plugin-image",
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
+        "gatsby-plugin-styled-components",
         {
             resolve: `gatsby-source-filesystem`,
             options: {
