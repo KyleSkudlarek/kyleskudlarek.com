@@ -2,20 +2,34 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
+import styled from "styled-components";
+
+
+const BlogLinkText = styled(props => <Link {...props} />)`
+  color: var(--navbar-color);
+  font-size: 2.0rem;
+  font-weight: 500;
+`;
+
+
+const Article = styled(props => <article {...props} />)`
+  color: var(--font-color-muted);
+`;
+
 
 const BlogPage = ({ data }) => {
     return (
         <Layout pageTitle="My Blog Posts">
             {
                 data.allMdx.nodes.map(node => (
-                    <article key={node.id}>
+                    <Article key={node.id}>
                         <h2>
-                            <Link to={`/blog/${node.frontmatter.slug}`}>
+                            <BlogLinkText to={`/blog/${node.frontmatter.slug}`}>
                                 {node.frontmatter.title}
-                            </Link>
+                            </BlogLinkText>
                         </h2>
                         <p>Posted: {node.frontmatter.date}</p>
-                    </article>
+                    </Article>
                 ))
             }
         </Layout>

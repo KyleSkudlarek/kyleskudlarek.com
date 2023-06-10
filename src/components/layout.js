@@ -67,6 +67,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* Font color */
     --font-color-base: var(--gray-0);
+    --font-color-muted: var(--gray-6);
 
     /* Borders */
     --border-color: var(--gray-3);
@@ -117,16 +118,24 @@ const GlobalStyle = createGlobalStyle`
 const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 4rem;
+  //padding: 1rem 4rem;
   min-height: 100vh;
   color: var(--font-color-base);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--content-width);
+  padding-left: 4rem;
+  padding-right: 2rem;
+  font-family: var(--font-family-base);
+
+  
 `;
 
 
 const Navigation = styled.section`
   width: 100%;
   display: flex;
-  margin-top: 1rem;
+  margin-top: 3rem;
 `;
 
 const NavContainer = styled.div`
@@ -135,23 +144,16 @@ const NavContainer = styled.div`
   color: #FFFFFF;
 
   max-width: var(--content-width);
-  //padding: 0 2rem;
+
   height: var(--navbar-height-large);
 
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.25rem;
 `;
 
 const NavLinkBrand = styled(props => <Link {...props} />)`
 
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--navbar-color);
   margin: 0;
@@ -165,14 +167,16 @@ const NavLinkBrand = styled(props => <Link {...props} />)`
   border-radius: var(--border-radius);
   margin-right: 0.5rem;
   text-decoration: none;
+  margin-bottom: 1.25rem;
 
 `;
 
 const NavLinkLogo= styled.img`
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   min-height: 20px;
   min-width: 20px;
+  margin-right: 0.25rem;
 `;
 
 
@@ -181,12 +185,17 @@ const NavLinkSpan= styled.span`
 
 `;
 
-const Heading = styled.h1`
-  color: rebeccapurple;
+
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  margin-left: 0.25rem;
 `;
 
-
 const NavLinkItem = styled.div`
+  
   padding-right: 2rem;
 
 `;
@@ -194,6 +203,19 @@ const NavLinkItem = styled.div`
 const NavLinkText = styled(props => <Link {...props} />)`
   color: #FFFFFF;
   text-decoration: none;
+  color: var(--navbar-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+`;
+
+const Main = styled.main`
+    margin-top: 5rem;
+`;
+
+const Heading1 = styled.h1`
+  color: var(--font-color-base);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 `;
 
 
@@ -220,11 +242,6 @@ const Layout = ({ pageTitle, children }) => {
                         </NavLinkBrand>
                         <Nav>
                             <NavLinkItem>
-                                <NavLinkText to="/">
-                                    Home
-                                </NavLinkText>
-                            </NavLinkItem>
-                            <NavLinkItem>
                                 <NavLinkText to="/about">
                                     About
                                 </NavLinkText>
@@ -242,12 +259,12 @@ const Layout = ({ pageTitle, children }) => {
                         </Nav>
                     </NavContainer>
                 </Navigation>
-                <main>
-                    <Heading>
+                <Main>
+                    <Heading1>
                         {pageTitle}
-                    </Heading>
+                    </Heading1>
                     {children}
-                </main>
+                </Main>
             </LayoutContainer>
         </React.Fragment>
     )
