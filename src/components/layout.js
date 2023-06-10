@@ -151,7 +151,7 @@ const NavLinkBrand = styled(props => <Link {...props} />)`
 
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.0rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--navbar-color);
   margin: 0;
