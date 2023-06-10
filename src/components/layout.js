@@ -5,8 +5,6 @@ import { createGlobalStyle } from 'styled-components'
 import floppyLogo from '../assets/floppylogo.png'
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
-
   :root {
     /* Colors */
     --gray-0: #f8f9fa;
@@ -153,7 +151,7 @@ const NavLinkBrand = styled(props => <Link {...props} />)`
 
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   font-weight: 700;
   color: var(--navbar-color);
   margin: 0;
