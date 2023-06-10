@@ -2,10 +2,11 @@ import * as React from 'react'
 import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
+import floppyLogo from '../assets/floppylogo.png'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
-  
+
   :root {
     /* Colors */
     --gray-0: #f8f9fa;
@@ -57,20 +58,27 @@ const GlobalStyle = createGlobalStyle`
     --indigo-dark: #4509cf;
     --indigo-light: #969bf6;
     --indigo-muted: #f1f2fd;
-    
+
     /* Font family */
     --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont,'Helvetica Neue', Arial, sans-serif;
     --font-family-monospace: 'IBM Plex Mono', Menlo, monospace;
     --font-family-heading: 'Merriweather', -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', Arial, sans-serif;
 
+    /* Font color */
+    --font-color-base: var(--gray-0);
+
     /* Borders */
     --border-color: var(--gray-3);
     --border-color-hover: var(--gray-6);
+    --border-radius: 4px;
 
     /* Elements */
     --background-color: #181818;
     --navbar: var(--gray-1);
+    --navbar-color: var(--gray-4);
+    --theme-button-color: var(--gray-0);
+    --theme-button-border: var(--gray-7);
 
     /* Sizes */
     --content-width: 1160px;
@@ -78,46 +86,58 @@ const GlobalStyle = createGlobalStyle`
     --content-width--medium: 700px;
     --navbar-height-large: 80px;
     --navbar-height-small: 60px;
-    
-    
+
+
   }
-  
+
   * {
-      margin: 0;
-      padding: 0;
+    margin: 0;
+    padding: 0;
   }
   html {
-      overscroll-behavior: none;
-      overflow: hidden;
-      height: 100%;
-      font-family: var(--font-family-base);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.6;
-      font-size: 16px;
-      font-weight: normal;
-      font-kerning: normal;
+    overscroll-behavior: none;
+    overflow: hidden;
+    height: 100%;
+    font-family: var(--font-family-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: normal;
+    font-kerning: normal;
   }
   body {
-      overflow: auto;
-      height: 100%;
-      background: var(--background-color);
+    overflow: auto;
+    height: 100%;
+    background: var(--background-color);
   }
 `
+
+
+const LayoutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 4rem;
+  min-height: 100vh;
+  color: var(--font-color-base);
+`;
+
+
 const Navigation = styled.section`
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
 `;
 
 const NavContainer = styled.div`
-    display: flex;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--content-width);
-    padding: 0 2rem;
-    height: var(--navbar-height-large);
+  display: block;
+  box-sizing: border-box;
+  color: #FFFFFF;
+
+  max-width: var(--content-width);
+  //padding: 0 2rem;
+  height: var(--navbar-height-large);
+
 `;
 
 const Nav = styled.nav`
@@ -127,17 +147,53 @@ const Nav = styled.nav`
   gap: 0.25rem;
 `;
 
+const NavLinkBrand = styled(props => <Link {...props} />)`
+
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navbar-color);
+  margin: 0;
+  //padding: 0.4rem 0.5rem;
+  background: var(--theme-button-background);
+  color: var(--theme-button-color);
+  display: inline-flex;
+
+  font-family: var(--font-family-base);
+  line-height: 1;
+  border-radius: var(--border-radius);
+  margin-right: 0.5rem;
+  text-decoration: none;
+
+`;
+
+const NavLinkLogo= styled.img`
+  height: 20px;
+  width: 20px;
+  min-height: 20px;
+  min-width: 20px;
+`;
+
+
+const NavLinkSpan= styled.span`
+  display: block;
+
+`;
+
 const Heading = styled.h1`
-    color: rebeccapurple;
+  color: rebeccapurple;
 `;
 
 
 const NavLinkItem = styled.div`
-    padding-right: 2rem;
+  padding-right: 2rem;
+
 `;
 
 const NavLinkText = styled(props => <Link {...props} />)`
-    color: #FFFFFF;
+  color: #FFFFFF;
+  text-decoration: none;
 `;
 
 
@@ -153,41 +209,47 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
     return (
-      <React.Fragment>
-        <GlobalStyle/>
-       <Navigation>
-        <NavContainer>
-            <Nav>
-                    <NavLinkItem>
-                        <NavLinkText to="/">
-                            Home
-                        </NavLinkText>
-                    </NavLinkItem>
-                    <NavLinkItem>
-                        <NavLinkText to="/about">
-                            About
-                        </NavLinkText>
-                    </NavLinkItem>
-                    <NavLinkItem>
-                        <NavLinkText to="/blog">
-                            Blog
-                        </NavLinkText>
-                    </NavLinkItem>
-                    <NavLinkItem>
-                        <NavLinkText to="/projects">
-                            Projects
-                        </NavLinkText>
-                    </NavLinkItem>
-            </Nav>
-        </NavContainer>
-       </Navigation>
-            <main>
-                <Heading>
-                    {pageTitle}
-                </Heading>
-                {children}
-            </main>
-      </React.Fragment>
+        <React.Fragment>
+            <GlobalStyle/>
+            <LayoutContainer>
+                <Navigation>
+                    <NavContainer>
+                        <NavLinkBrand to="/">
+                            <NavLinkLogo src={floppyLogo} alt="Kyle Skudlarek" />
+                            <NavLinkSpan>Kyle Skudlarek</NavLinkSpan>
+                        </NavLinkBrand>
+                        <Nav>
+                            <NavLinkItem>
+                                <NavLinkText to="/">
+                                    Home
+                                </NavLinkText>
+                            </NavLinkItem>
+                            <NavLinkItem>
+                                <NavLinkText to="/about">
+                                    About
+                                </NavLinkText>
+                            </NavLinkItem>
+                            <NavLinkItem>
+                                <NavLinkText to="/blog">
+                                    Blog
+                                </NavLinkText>
+                            </NavLinkItem>
+                            <NavLinkItem>
+                                <NavLinkText to="/projects">
+                                    Projects
+                                </NavLinkText>
+                            </NavLinkItem>
+                        </Nav>
+                    </NavContainer>
+                </Navigation>
+                <main>
+                    <Heading>
+                        {pageTitle}
+                    </Heading>
+                    {children}
+                </main>
+            </LayoutContainer>
+        </React.Fragment>
     )
 }
 
