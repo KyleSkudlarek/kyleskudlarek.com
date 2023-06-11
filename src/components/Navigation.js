@@ -139,6 +139,8 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
           <NavLinkItem>
             <GithubNavLink
               href={"https://github.com/kyleskudlarek"}
+              target="_blank"
+              rel="noreferrer"
             >
               <span>GitHub</span>
               <ExternalLinkIcon />
