@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import floppyLogo from "../assets/floppylogo.png";
 import styled from "styled-components";
+
+import { ExternalLinkIcon } from '../assets/ExternalLinkIcon'
+import floppyLogo from "../assets/floppylogo.png";
+
 
 
 const NavigationSection = styled.section`
@@ -80,6 +83,20 @@ const NavLinkText = styled(props => <Link {...props} />)`
   }
 `;
 
+const GithubNavLink = styled(props => <a {...props} />)`
+  text-decoration: none;
+  color: var(--navbar-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-bottom: .25rem;
+  
+  // Add hover effect
+  &:active, &:hover {
+    color: var(--navbar-color-hover);
+    border-bottom:  2px solid var(--rainbow-3);
+  }
+`;
+
 export const Navigation = ({ theme, onUpdateTheme }) => {
   return (
     <NavigationSection>
@@ -118,6 +135,14 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
               }}>
               <span>Projects</span>
             </NavLinkText>
+          </NavLinkItem>
+          <NavLinkItem>
+            <GithubNavLink
+              href={"https://github.com/kyleskudlarek"}
+            >
+              <span>GitHub</span>
+              <ExternalLinkIcon />
+            </GithubNavLink>
           </NavLinkItem>
         </Nav>
       </NavContainer>
