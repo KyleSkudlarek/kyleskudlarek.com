@@ -74,8 +74,9 @@ const GlobalStyle = createGlobalStyle`
 
     /* Elements */
     --background-color: #181818;
-    --navbar: var(--gray-1);
+    --navbar: var(--gray-4);
     --navbar-color: var(--gray-4);
+    --navbar-color-hover: white;
     --theme-button-color: var(--gray-0);
     --theme-button-border: var(--gray-7);
 
@@ -126,7 +127,7 @@ const LayoutContainer = styled.div`
   padding-right: 2rem;
   font-family: var(--font-family-base);
 
-  
+
 `;
 
 
@@ -193,21 +194,29 @@ const Nav = styled.nav`
 `;
 
 const NavLinkItem = styled.div`
-  
+
   padding-right: 2rem;
 
 `;
 
 const NavLinkText = styled(props => <Link {...props} />)`
-  color: #FFFFFF;
   text-decoration: none;
   color: var(--navbar-color);
   font-size: 1.1rem;
   font-weight: 500;
+  padding-bottom: .25rem;
+  
+  // Add hover effect
+  &:active, &:hover {
+    color: var(--navbar-color-hover);
+    border-bottom:  2px solid var(--rainbow-3);
+  }
+
+
 `;
 
 const Main = styled.main`
-    margin-top: 5rem;
+  margin-top: 5rem;
 `;
 
 const Heading1 = styled.h1`
@@ -218,7 +227,7 @@ const Heading1 = styled.h1`
 
 
 const Layout = ({ pageTitle, children }) => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -228,44 +237,59 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
 
-    return (
-        <React.Fragment>
-            <GlobalStyle/>
-            <LayoutContainer>
-                <Navigation>
-                    <NavContainer>
-                        <NavLinkBrand to="/">
-                            <NavLinkLogo src={floppyLogo} alt="Kyle Skudlarek" />
-                            <NavLinkSpan>Kyle Skudlarek</NavLinkSpan>
-                        </NavLinkBrand>
-                        <Nav>
-                            <NavLinkItem>
-                                <NavLinkText to="/about">
-                                    About
-                                </NavLinkText>
-                            </NavLinkItem>
-                            <NavLinkItem>
-                                <NavLinkText to="/blog">
-                                    Blog
-                                </NavLinkText>
-                            </NavLinkItem>
-                            <NavLinkItem>
-                                <NavLinkText to="/projects">
-                                    Projects
-                                </NavLinkText>
-                            </NavLinkItem>
-                        </Nav>
-                    </NavContainer>
-                </Navigation>
-                <Main>
-                    <Heading1>
-                        {pageTitle}
-                    </Heading1>
-                    {children}
-                </Main>
-            </LayoutContainer>
-        </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <GlobalStyle/>
+      <LayoutContainer>
+        <Navigation>
+          <NavContainer>
+            <NavLinkBrand to="/">
+              <NavLinkLogo src={floppyLogo} alt="Kyle Skudlarek" />
+              <NavLinkSpan>Kyle Skudlarek</NavLinkSpan>
+            </NavLinkBrand>
+            <Nav>
+              <NavLinkItem>
+                <NavLinkText
+                  to="/about"
+                  activeStyle={{
+                    color: "var(--navbar-color-hover)",
+                    borderBottom: "2px solid var(--rainbow-3)",
+                  }}>
+                  <span>About</span>
+                </NavLinkText>
+              </NavLinkItem>
+              <NavLinkItem>
+                <NavLinkText
+                  to="/blog"
+                  activeStyle={{
+                    color: "var(--navbar-color-hover)",
+                    borderBottom: "2px solid var(--rainbow-3)",
+                  }}>
+                 <span>Blog </span>
+                </NavLinkText>
+              </NavLinkItem>
+              <NavLinkItem>
+                <NavLinkText
+                  to="/projects"
+                  activeStyle={{
+                    color: "var(--navbar-color-hover)",
+                    borderBottom: "2px solid var(--rainbow-3)",
+                  }}>
+                  <span>Projects</span>
+                </NavLinkText>
+              </NavLinkItem>
+            </Nav>
+          </NavContainer>
+        </Navigation>
+        <Main>
+          <Heading1>
+            {pageTitle}
+          </Heading1>
+          {children}
+        </Main>
+      </LayoutContainer>
+    </React.Fragment>
+  )
 }
 
 export default Layout
