@@ -6,13 +6,13 @@ import Seo from '../components/seo'
 
 const IndexPage = () => {
     return (
-        <Layout pageTitle="Home Page">
+        <Layout>
             <p>I'm making this by following the Gatsby Tutorial.</p>
 
         </Layout>
     )
 }
 
-export const Head = () => <Seo title="Home Page" />
+export const Head = () => <Seo />
 
 export default IndexPage

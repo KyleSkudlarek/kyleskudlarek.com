@@ -126,6 +126,8 @@ const LayoutContainer = styled.div`
   padding-left: 4rem;
   padding-right: 2rem;
   font-family: var(--font-family-base);
+  padding: 0 1rem;
+  
 
 
 `;
@@ -282,9 +284,6 @@ const Layout = ({ pageTitle, children }) => {
           </NavContainer>
         </Navigation>
         <Main>
-          <Heading1>
-            {pageTitle}
-          </Heading1>
           {children}
         </Main>
       </LayoutContainer>
