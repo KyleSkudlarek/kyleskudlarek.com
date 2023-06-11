@@ -35,9 +35,9 @@ const IndexPage = () => {
           Welcome to my digital garden. 🌱
           <br />
           <br />
-          I'm a full-stack software developer who works on integrating
-          generative AI into enterprise systems and websites. I like physics,
-          philosophy, design, cooking, lifting weights, and stand-up comedy.
+          I'm a full-stack software developer who works on generative AI,
+          enterprise systems and web design.
+          I like physics, philosophy, cooking, lifting weights, and stand-up comedy.
           <br />
           <br />
           Check out my projects and

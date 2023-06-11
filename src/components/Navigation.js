@@ -49,7 +49,7 @@ const NavLinkLogo= styled.img`
 `;
 
 
-const NavLinkSpan= styled.span`
+const NavSpan= styled.span`
   display: block;
 `;
 
@@ -63,10 +63,12 @@ const Nav = styled.nav`
 
 const NavLinkItem = styled.div`
   padding-right: 2rem;
-  display:inline-block;
+  flex-shrink: 0;
+
 `;
 
 const NavLinkText = styled(props => <Link {...props} />)`
+  box-sizing: border-box;
   text-decoration: none;
   color: var(--navbar-color);
   font-size: 1.7rem;
@@ -81,14 +83,13 @@ const NavLinkText = styled(props => <Link {...props} />)`
 `;
 
 const GithubNavLink = styled(props => <a {...props} />)`
-  //display:inline-block;
   text-decoration: none;
   color: var(--navbar-color);
   font-size: 1.7rem;
   font-weight: 500;
   padding-bottom: .25rem;
   
-  // Add hover effect
+   //Add hover effect
   &:active, &:hover {
     color: var(--navbar-color-hover);
     border-bottom:  2px solid var(--rainbow-3);
@@ -101,36 +102,24 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
       <NavContainer>
         <NavLinkBrand to="/">
           <NavLinkLogo src={floppyLogo} alt="Kyle Skudlarek" />
-          <NavLinkSpan>Kyle Skudlarek</NavLinkSpan>
+          <NavSpan>Kyle Skudlarek</NavSpan>
         </NavLinkBrand>
         <Nav>
           <NavLinkItem>
             <NavLinkText
-              to="/about"
-              activeStyle={{
-                color: "var(--navbar-color-hover)",
-                borderBottom: "2px solid var(--rainbow-3)",
-              }}>
+              to="/about">
               <span>About</span>
             </NavLinkText>
           </NavLinkItem>
           <NavLinkItem>
             <NavLinkText
-              to="/blog"
-              activeStyle={{
-                color: "var(--navbar-color-hover)",
-                borderBottom: "2px solid var(--rainbow-3)",
-              }}>
+              to="/blog">
               <span>Blog </span>
             </NavLinkText>
           </NavLinkItem>
           <NavLinkItem>
             <NavLinkText
-              to="/projects"
-              activeStyle={{
-                color: "var(--navbar-color-hover)",
-                borderBottom: "2px solid var(--rainbow-3)",
-              }}>
+              to="/projects">
               <span>Projects</span>
             </NavLinkText>
           </NavLinkItem>
@@ -140,8 +129,10 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
               target="_blank"
               rel="noreferrer"
             >
+
               <span>GitHub</span>
               <ExternalLinkIcon />
+
             </GithubNavLink>
           </NavLinkItem>
         </Nav>
