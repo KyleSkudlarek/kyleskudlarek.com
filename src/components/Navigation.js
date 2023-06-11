@@ -10,7 +10,7 @@ import floppyLogo from "../assets/floppylogo.png";
 const NavigationSection = styled.section`
   width: 100%;
   display: flex;
-  margin-top: 3rem;
+  margin-top: 4rem;
 `;
 
 const NavContainer = styled.div`
@@ -26,11 +26,8 @@ const NavLinkBrand = styled(props => <Link {...props} />)`
 
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--navbar-color);
-  margin: 0;
-  //padding: 0.4rem 0.5rem;
   background: var(--theme-button-background);
   color: var(--theme-button-color);
   display: inline-flex;
@@ -40,8 +37,7 @@ const NavLinkBrand = styled(props => <Link {...props} />)`
   border-radius: var(--border-radius);
   margin-right: 0.5rem;
   text-decoration: none;
-  margin-bottom: 1.25rem;
-
+  margin-bottom: 1.5rem;
 `;
 
 const NavLinkLogo= styled.img`
@@ -84,6 +80,7 @@ const NavLinkText = styled(props => <Link {...props} />)`
 `;
 
 const GithubNavLink = styled(props => <a {...props} />)`
+  //display:inline-block;
   text-decoration: none;
   color: var(--navbar-color);
   font-size: 1.1rem;

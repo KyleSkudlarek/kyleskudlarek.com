@@ -8,6 +8,7 @@ const StyledSvg = styled.svg`
   align-self: center;
   padding-left: 0.25rem;
   vertical-align: middle;
+  //flex: 0 0 100%;
 `;
 
 export const ExternalLinkIcon = () => {

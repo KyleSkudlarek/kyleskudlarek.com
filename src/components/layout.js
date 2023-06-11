@@ -112,22 +112,30 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const FlexLayout = styled.div`
+  //display: flex;
+  //flex-direction: column;
+  //min-height: 100vh;
+  //color: var(--font-color-base);
+`;
+
 const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  //padding: 1rem 4rem;
+  min-height: 100vh;
+  color: var(--font-color-base);
+  max-width: var(--content-width--medium);
+  padding: 0 1rem;
   min-height: 100vh;
   color: var(--font-color-base);
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--content-width);
-  padding-left: 4rem;
-  padding-right: 2rem;
   font-family: var(--font-family-base);
 `;
 
 const Main = styled.main`
   margin-top: 5rem;
+  max-width: var(--content-width--medium);
 `;
 
 
@@ -145,6 +153,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <React.Fragment>
       <GlobalStyle/>
+      <FlexLayout>
       <LayoutContainer>
         <Navigation>
         </Navigation>
@@ -152,6 +161,7 @@ const Layout = ({ pageTitle, children }) => {
           {children}
         </Main>
       </LayoutContainer>
+      </FlexLayout>
     </React.Fragment>
   )
 }
