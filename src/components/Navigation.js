@@ -26,7 +26,7 @@ const NavLinkBrand = styled(props => <Link {...props} />)`
 
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 2.0rem;
   font-weight: 700;
   background: var(--theme-button-background);
   color: var(--theme-button-color);
@@ -63,12 +63,13 @@ const Nav = styled.nav`
 
 const NavLinkItem = styled.div`
   padding-right: 2rem;
+  display:inline-block;
 `;
 
 const NavLinkText = styled(props => <Link {...props} />)`
   text-decoration: none;
   color: var(--navbar-color);
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   font-weight: 500;
   padding-bottom: .25rem;
   
@@ -83,7 +84,7 @@ const GithubNavLink = styled(props => <a {...props} />)`
   //display:inline-block;
   text-decoration: none;
   color: var(--navbar-color);
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   font-weight: 500;
   padding-bottom: .25rem;
   

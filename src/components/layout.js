@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
     'Helvetica Neue', Arial, sans-serif;
 
     /* Font color */
-    --font-color-base: var(--gray-0);
+    --font-color-base: var(--gray-2);
     --font-color-muted: var(--gray-6);
 
     /* Borders */
@@ -126,8 +126,6 @@ const LayoutContainer = styled.div`
   color: var(--font-color-base);
   max-width: var(--content-width--medium);
   padding: 0 1rem;
-  min-height: 100vh;
-  color: var(--font-color-base);
   margin-left: auto;
   margin-right: auto;
   font-family: var(--font-family-base);
