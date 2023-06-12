@@ -128,6 +128,7 @@ const LayoutContainer = styled.div`
 
 const Main = styled.main`
   margin-top: 5rem;
+  margin-bottom: 20rem;
   max-width: var(--content-width--medium);
   flex-grow: 1;
 `;
