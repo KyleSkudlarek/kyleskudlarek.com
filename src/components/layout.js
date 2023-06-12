@@ -80,6 +80,7 @@ const GlobalStyle = createGlobalStyle`
     --navbar-color-hover: white;
     --theme-button-color: var(--gray-0);
     --theme-button-border: var(--gray-7);
+    --theme-blue: var(--rainbow-3);
 
     /* Sizes */
     --content-width: 1160px;

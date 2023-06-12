@@ -78,7 +78,7 @@ const NavLinkText = styled(props => <Link {...props} />)`
   // Add hover effect
   &:active, &:hover {
     color: var(--navbar-color-hover);
-    border-bottom:  2px solid var(--rainbow-3);
+    border-bottom:  2px solid var(--theme-blue);
   }
 `;
 
@@ -92,7 +92,7 @@ const GithubNavLink = styled(props => <a {...props} />)`
    //Add hover effect
   &:active, &:hover {
     color: var(--navbar-color-hover);
-    border-bottom:  2px solid var(--rainbow-3);
+    border-bottom:  2px solid var(--theme-blue);
   }
 `;
 
