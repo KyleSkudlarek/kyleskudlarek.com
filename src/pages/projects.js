@@ -8,6 +8,7 @@ import { projectsList } from '../data/projectsList'
 const ProjectPage = () => {
     return (
         <Layout pageTitle="Projects">
+
             <p>Hi there! These are all my projects!</p>
         </Layout>
     )

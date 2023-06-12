@@ -142,7 +142,6 @@ export const Navigation = ({ theme, onUpdateTheme }) => {
             >
               <span>GitHub</span>
               <ExternalLinkIcon />
-
             </GithubNavLink>
           </NavLinkItem>
         </Nav>

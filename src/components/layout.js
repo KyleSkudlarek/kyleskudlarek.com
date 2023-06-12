@@ -126,6 +126,17 @@ const LayoutContainer = styled.div`
   font-family: var(--font-family-base);
 `;
 
+const Heading = styled.h1`
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  color: var(--font-color-base);
+  font-family: var(--font-family-base);
+  font-size: 2.0rem;
+  font-weight: 700;
+
+`;
+
+
 const Main = styled.main`
   margin-top: 5rem;
   margin-bottom: 20rem;
@@ -153,6 +164,9 @@ const Layout = ({ pageTitle, children }) => {
         <Navigation>
         </Navigation>
         <Main>
+          <Heading>
+            {pageTitle}
+          </Heading>
           {children}
         </Main>
         <Footer />

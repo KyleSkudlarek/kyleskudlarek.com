@@ -33,7 +33,7 @@ const IndexPLink = styled(props => <Link {...props} />)`
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Hey, I'm Kyle!">
       <IndexHeroDiv>
         <IndexP>
           Welcome to my digital zen garden. 🌱
