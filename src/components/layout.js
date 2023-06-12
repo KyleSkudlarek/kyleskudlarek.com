@@ -4,6 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
 import floppyLogo from '../assets/floppylogo.png'
 import { Navigation} from "./Navigation";
+import { Footer } from './Footer'
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -114,10 +115,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const FlexLayout = styled.div`
-  //display: flex;
-  //flex-direction: column;
-  //min-height: 100vh;
-  //color: var(--font-color-base);
 `;
 
 const LayoutContainer = styled.div`
@@ -135,6 +132,7 @@ const LayoutContainer = styled.div`
 const Main = styled.main`
   margin-top: 5rem;
   max-width: var(--content-width--medium);
+  flex-grow: 1;
 `;
 
 
@@ -152,15 +150,16 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <React.Fragment>
       <GlobalStyle/>
-      <FlexLayout>
+      <div>
       <LayoutContainer>
         <Navigation>
         </Navigation>
         <Main>
           {children}
         </Main>
+        <Footer />
       </LayoutContainer>
-      </FlexLayout>
+      </div>
     </React.Fragment>
   )
 }
