@@ -1,14 +1,14 @@
 import React from 'react'
 
-import netlify from '../assets/netlify.png'
+import aws from '../assets/aws3.png'
 import gatsby from '../assets/gatsby.png'
 import github from '../assets/github.png'
 import styled from 'styled-components'
 
 const madeWithLinks = [
   { url: 'https://www.gatsbyjs.org/', label: 'Gatsby', icon: gatsby },
-  { url: 'https://github.com/taniarascia', label: 'GitHub', icon: github },
-  { url: 'https://www.netlify.com', label: 'Netlify', icon: netlify },
+  { url: 'https://github.com/kyleskudlarek', label: 'GitHub', icon: github },
+  { url: 'https://aws.amazon.com/', label: 'AWS', icon: aws },
 ]
 
 const FooterLayout = styled(props => <footer {...props} />)`
@@ -58,6 +58,7 @@ const FooterImg = styled(props => <img {...props} />)`
   display: inline-block;
   max-height: 20px;
   width: auto;
+  
 `;
 
 export const Footer = () => {

@@ -114,9 +114,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const FlexLayout = styled.div`
-`;
-
 const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
