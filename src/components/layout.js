@@ -13,14 +13,14 @@ const GlobalStyle = createGlobalStyle`
     --gray-05: #f3f6f9;
     --gray-1: #f1f3f5;
     --gray-2: #e9ecef;
-    --gray-3: #dee2e6;
+    --gray-3: #2c2c2c;
     --gray-4: #ced4da;
     --gray-5: #adb5bd;
     --gray-6: #868e96;
     --gray-65: #555a61;
     --gray-7: #4b5056;
     --gray-8: #31363b;
-    --gray-9: #212529;
+    --gray-9: #1f1f1f;
     --gray-10: #151618;
 
     --green: #51b681;
@@ -68,6 +68,7 @@ const GlobalStyle = createGlobalStyle`
     /* Font color */
     --font-color-base: var(--gray-2);
     --font-color-muted: var(--gray-6);
+    --font-color-bright: white;
 
     /* Borders */
     --border-color: var(--gray-3);
@@ -82,11 +83,13 @@ const GlobalStyle = createGlobalStyle`
     --theme-button-color: var(--gray-0);
     --theme-button-border: var(--gray-7);
     --theme-blue: var(--rainbow-3);
+    --card-time-color: var(--rainbow-3);
+    --card-background-color: var(--gray-9);
 
     /* Sizes */
     --content-width: 1160px;
     --content-width--small: 560px;
-    --content-width--medium: 700px;
+    --content-width--medium: 900px;
     --navbar-height-large: 80px;
     --navbar-height-small: 60px;
   }
