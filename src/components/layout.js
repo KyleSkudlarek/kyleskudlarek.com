@@ -2,7 +2,6 @@ import * as React from 'react'
 import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
-import floppyLogo from '../assets/floppylogo.png'
 import { Navigation} from "./Navigation";
 import { Footer } from './Footer'
 
