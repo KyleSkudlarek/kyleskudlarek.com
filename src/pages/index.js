@@ -3,7 +3,6 @@ import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
 
-import floppyLogo from "../assets/floppylogo.png";
 import bitmoji from "../images/bitmoji.svg";
 import styled from "styled-components";
 import { Link } from 'gatsby'

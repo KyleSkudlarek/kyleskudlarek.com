@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --gray-2: #e9ecef;
     --gray-3: #2c2c2c;
     --gray-4: #ced4da;
-    --gray-5: #adb5bd;
+    --gray-5: #999;
     --gray-6: #868e96;
     --gray-65: #555a61;
     --gray-7: #4b5056;
@@ -67,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* Font color */
     --font-color-base: var(--gray-2);
-    --font-color-muted: var(--gray-6);
+    --font-color-muted: var(--gray-5);
     --font-color-bright: white;
 
     /* Borders */
@@ -85,6 +85,7 @@ const GlobalStyle = createGlobalStyle`
     --theme-blue: var(--rainbow-3);
     --card-time-color: var(--rainbow-3);
     --card-background-color: var(--gray-9);
+    --star: var(--rainbow-3);
 
     /* Sizes */
     --content-width: 1160px;

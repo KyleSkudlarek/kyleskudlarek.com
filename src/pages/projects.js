@@ -1,8 +1,9 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
 import { ExternalLinkIcon } from '../assets/ExternalLinkIcon'
+import { StarIcon } from '../assets/StarIcon'
 import { projectsList } from '../data/projectsList'
 import styled from "styled-components";
 
@@ -17,7 +18,17 @@ const ProjectSegment = styled(props => <section {...props} />)`
 const ProjectPreviewDiv = styled(props => <div {...props} />)`
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr);
+  //grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (min-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media screen and (min-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  
 `;
 
 const ProjectCard = styled(props => <div {...props} />)`
@@ -28,11 +39,6 @@ const ProjectCard = styled(props => <div {...props} />)`
   position: relative;
   padding-bottom: 5rem;
 `;
-
-const ProjectStars = styled(props => <div {...props} />)`
-
-`;
-
 
 const ProjectContent = styled(props => <div {...props} />)`
   a {
@@ -105,7 +111,53 @@ const ProjectLinks = styled(props => <div {...props} />)`
   }
 `;
 
+const ProjectStars = styled(props => <div {...props} />)`
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+`;
+
+const ProjectStar = styled(props => <div {...props} />)`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--star);
+  font-family: var(--font-family-monospace);
+  a {
+    color: var(--font-color-muted);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--font-color-bright);
+    text-decoration: underline;
+  }
+
+`;
+
 const ProjectPage = () => {
+
+  const [repos, setRepos] = useState([])
+
+  useEffect(() => {
+    async function getStars() {
+      const repos = await fetch(
+        'https://api.github.com/users/kyleskudlarek/repos?per_page=100'
+      )
+
+      return repos.json()
+    }
+
+    getStars()
+      .then((data) => {
+        setRepos(data)
+      })
+      .catch((err) => console.log(err))
+  }, [])
+
+
     return (
         <Layout pageTitle="Projects">
           <ProjectSegment>
@@ -114,6 +166,19 @@ const ProjectPage = () => {
                 return (
                   <ProjectCard key={project.slug}>
                     <ProjectStars>
+                      {repos.find((repo) => repo.name === project.slug) && (
+                        <ProjectStar>
+                          <a
+                            href={`https://github.com/kyleskudlarek/${project.slug}/stargazers`}
+                          >
+                            {Number(
+                              repos.find((repo) => repo.name === project.slug)
+                                .stargazers_count
+                            ).toLocaleString()}
+                          </a>
+                          <StarIcon />
+                        </ProjectStar>
+                      )}
                     </ProjectStars>
                     <ProjectContent>
                       <time>{project.date}</time>

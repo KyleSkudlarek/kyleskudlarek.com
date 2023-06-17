@@ -8,7 +8,7 @@ import kylepic from "../images/kyle.jpg";
 const AboutMeImg = styled(props => <img {...props} />)`
   width: 100%;
   max-height: 100%;
-  border-radius: 50%
+  border-radius: 50vh;
 `;
 
 const AboutMeHeroDiv = styled.div`
