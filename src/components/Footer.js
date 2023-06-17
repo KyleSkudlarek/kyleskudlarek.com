@@ -3,10 +3,12 @@ import React from 'react'
 import aws from '../assets/aws3.png'
 import gatsby from '../assets/gatsby.png'
 import github from '../assets/github.png'
+import reactIcon from '../assets/reactIcon.svg'
 import styled from 'styled-components'
 
 const madeWithLinks = [
   { url: 'https://www.gatsbyjs.org/', label: 'Gatsby', icon: gatsby },
+  { url: 'https://react.dev/', label: 'React', icon: reactIcon },
   { url: 'https://github.com/kyleskudlarek', label: 'GitHub', icon: github },
   { url: 'https://aws.amazon.com/', label: 'AWS', icon: aws },
 ]
