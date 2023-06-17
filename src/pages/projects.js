@@ -24,7 +24,7 @@ const ProjectCard = styled(props => <div {...props} />)`
   border-radius: var(--border-radius);
   background: var(--card-background-color);
   border: 1px solid var(--border-color);
-  padding: 1rem;
+  padding: 1.5rem;
   position: relative;
   padding-bottom: 5rem;
 `;
@@ -59,7 +59,7 @@ const ProjectContent = styled(props => <div {...props} />)`
     display: block;
     font-family: var(--font-family-monospace);
     color: var(--card-time-color);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
   
   p {
@@ -80,7 +80,7 @@ const ProjectLinks = styled(props => <div {...props} />)`
   gap: 0.5rem;
   position: absolute;
   bottom: 1.5rem;
-  left: 1.5rem;
+  //left: 1.5rem;
   a{
     -webkit-appearance: none;
     background: var(--button-background-color);
@@ -128,8 +128,16 @@ const ProjectPage = () => {
                     </ProjectContent>
 
                     <ProjectLinks>
+                      {project.url && (
                       <a
-                        className="button small flex"
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Demo <ExternalLinkIcon />
+                      </a>
+                        )}
+                      <a
                         href={`https://github.com/kyleskudlarek/${project.slug}`}
                         target="_blank"
                         rel="noreferrer"
