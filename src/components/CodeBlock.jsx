@@ -1,7 +1,7 @@
 import React from 'react'
 import Highlight, {defaultProps} from 'prism-react-renderer'
 import { themes } from 'prism-react-renderer';
-import Layout from "./layout";
+
 
 const CodeBlock = (props) => {
   const className = props.children.props.className || ''
