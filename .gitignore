@@ -1,7 +1,6 @@
-node_modules/
-.cache/
-public
-.idea/
-.idea/*
-.idea
 .DS_Store
+node_modules/
+.next/
+out/
+.env
+.env*.local
