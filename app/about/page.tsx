@@ -40,9 +40,9 @@ export default function AboutPage() {
         <div className="order-first md:order-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/kyle.webp"
+            src="/about.webp"
             alt="Kyle Skudlarek"
-            className="w-full max-w-[16rem] rounded-sm border border-[var(--hairline)]"
+            className="aspect-square w-full max-w-[16rem] rounded-sm border border-[var(--hairline)] object-cover"
           />
         </div>
       </section>

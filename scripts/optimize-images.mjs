@@ -9,7 +9,7 @@ import { mkdir } from 'node:fs/promises'
 // a single native-width WebP is the whole story.
 const JOBS = [
   { src: 'assets/kyleskudlarek_hero_image.png', out: 'public/hero.webp', width: 1456, quality: 82 },
-  { src: 'assets/kyle.jpg', out: 'public/kyle.webp', width: 900, quality: 82 },
+  { src: 'assets/about_me_selfie.jpeg', out: 'public/about.webp', width: 800, quality: 84 },
 ]
 
 await mkdir('public', { recursive: true })

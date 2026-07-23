@@ -70,7 +70,7 @@ export default function Hero() {
           <div className="rise flex flex-wrap items-center gap-3" style={{ animationDelay: '0.46s' }}>
             {/* Single CTA — Projects lives in the nav. */}
             <Link href="/about/" className="btn btn-primary no-underline">
-              More about me
+              About me
             </Link>
           </div>
         </div>

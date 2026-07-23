@@ -2,16 +2,34 @@ import { links } from '@/lib/site'
 
 // The annotated "find me elsewhere" hub. One line of context per link is what
 // separates this from a linktree. Used on both home and About.
-export default function Elsewhere() {
+//
+// `prominent` (home): a display heading + larger rows so the section carries
+// real weight as the page's connect moment. Default (About): the quiet mono
+// label, since the page already leads with its own h1.
+export default function Elsewhere({ prominent = false }: { prominent?: boolean }) {
   return (
     <section className="shell mt-24">
-      <p className="section-label m-0 mb-8">My Links</p>
+      {prominent ? (
+        <h2 className="display m-0 mb-8 text-[clamp(1.8rem,3.4vw,2.6rem)]">
+          My <em>Links</em>
+        </h2>
+      ) : (
+        <p className="section-label m-0 mb-8">My Links</p>
+      )}
       <ul className="m-0 flex list-none flex-col gap-px bg-[var(--hairline)] p-0">
         {links.map((link) => {
           const inner = (
-            <div className="flex flex-col gap-2 bg-ink px-1 py-5 transition-colors group-hover:bg-ground sm:flex-row sm:items-baseline sm:gap-6">
+            <div
+              className={`flex flex-col gap-2 bg-ink px-1 transition-colors group-hover:bg-ground sm:flex-row sm:items-baseline sm:gap-6 ${
+                prominent ? 'py-6' : 'py-5'
+              }`}
+            >
               <div className="flex min-w-[12rem] items-baseline gap-3">
-                <span className="text-[1.05rem] font-medium text-bright transition-colors group-hover:text-glow">
+                <span
+                  className={`font-medium text-bright transition-colors group-hover:text-glow ${
+                    prominent ? 'text-[1.35rem]' : 'text-[1.05rem]'
+                  }`}
+                >
                   {link.label}
                 </span>
                 <span className="font-mono text-xs text-slate">{link.handle}</span>
