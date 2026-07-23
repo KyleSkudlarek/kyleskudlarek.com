@@ -68,10 +68,8 @@ export default function Hero() {
             stand-up comedy.
           </p>
           <div className="rise flex flex-wrap items-center gap-3" style={{ animationDelay: '0.46s' }}>
-            <Link href="/projects/" className="btn btn-primary no-underline">
-              View projects
-            </Link>
-            <Link href="/about/" className="btn btn-ghost no-underline">
+            {/* Single CTA — Projects lives in the nav. */}
+            <Link href="/about/" className="btn btn-primary no-underline">
               More about me
             </Link>
           </div>

@@ -25,14 +25,7 @@ export type Link = {
 
 export const links: Link[] = [
   {
-    label: 'GitHub',
-    href: 'https://github.com/kyleskudlarek',
-    handle: '@kyleskudlarek',
-    blurb: 'Open-source work and the source for this site.',
-  },
-  {
-    label: 'skudlabs',
-    // TODO(kyle): confirm skudlabs.com vs scudlabs.com — notes and brief disagree.
+    label: 'Skudlabs',
     href: 'https://skudlabs.com',
     handle: 'skudlabs.com',
     blurb: 'My software consulting practice.',
@@ -42,6 +35,12 @@ export const links: Link[] = [
     href: 'https://www.linkedin.com/in/kyleskudlarek/',
     handle: 'in/kyleskudlarek',
     blurb: 'Career history and the professional side.',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/kyleskudlarek',
+    handle: '@kyleskudlarek',
+    blurb: 'Open-source work and the source for this site.',
   },
   {
     label: 'Instagram',
