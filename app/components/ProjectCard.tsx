@@ -29,9 +29,9 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="card group">
       <div className="flex items-baseline justify-between gap-4">
-        {/* Title links to the repo; kept as the card's primary target. */}
+        {/* Title -> the live hosted site (the card's primary target). */}
         <a
-          href={repoUrl}
+          href={project.url}
           target="_blank"
           rel="noreferrer"
           className="m-0 text-[1.15rem] font-bold tracking-[-0.035em] text-bright no-underline transition-colors group-hover:text-glow"
@@ -45,14 +45,10 @@ export default function ProjectCard({ project }: { project: Project }) {
       <p className="mt-2 mb-0 text-sm text-mist/80">{project.blurb}</p>
       <div className="mt-5 flex items-center gap-4 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-khaki">
         <span>{project.year}</span>
+        {/* Source lives on GitHub. */}
         <a href={repoUrl} target="_blank" rel="noreferrer" className="text-slate no-underline hover:text-glow">
-          GitHub ↗
+          Source ↗
         </a>
-        {project.demo && (
-          <a href={project.demo} target="_blank" rel="noreferrer" className="text-slate no-underline hover:text-glow">
-            Live demo ↗
-          </a>
-        )}
       </div>
     </div>
   )

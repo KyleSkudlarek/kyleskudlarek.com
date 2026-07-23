@@ -5,7 +5,7 @@ import { links } from '@/lib/site'
 export default function Elsewhere() {
   return (
     <section className="shell mt-24">
-      <p className="section-label m-0 mb-8">Elsewhere</p>
+      <p className="section-label m-0 mb-8">My Links</p>
       <ul className="m-0 flex list-none flex-col gap-px bg-[var(--hairline)] p-0">
         {links.map((link) => {
           const inner = (
