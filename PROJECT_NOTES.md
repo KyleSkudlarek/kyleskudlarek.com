@@ -24,7 +24,7 @@ not prescribed layouts, components, or color values. Make strong, modern design 
 
 This is Kyle's personal site and the front door to his software-engineering brand — a
 place that should feel genuinely *cool* and personal, not a template. It anchors his
-professional presence (and links out to his side business, **scudlabs.com**) while being a
+professional presence (and links out to his side business, **skudlabs.com**) while being a
 playground for experiments.
 
 **What it should feel like:** modern, cutting-edge, and a little unexpected — the kind of
@@ -45,7 +45,14 @@ Fast and clean first; delightful in the details.
 - **Home** + **About** (copy below; keep the substance, redesign freely).
 - **Projects** — highlights with live GitHub star counts (details below).
 - **Blog** — a genuinely nice reading experience (MDX-style posts). Core, not an afterthought.
-- **Links / connect** — scudlabs.com, GitHub, LinkedIn, Instagram (URLs in Content section).
+- **Links / connect** — skudlabs.com, GitHub, LinkedIn, Instagram (URLs in Content section).
+
+LinkedIn: https://www.linkedin.com/in/kyleskudlarek/
+Github: https://github.com/KyleSkudlarek
+Strava: https://www.strava.com/athletes/133126737
+Instagram: https://www.instagram.com/ky_skud/
+Skudlabs.com: https://skudlabs.com/
+
 - **Playground / Labs** — interactive browser experiments Kyle builds (some authored with
   the help of Fable as a *build tool*). NOTE: end users do NOT interact with Fable through
   the site — these are just cool self-contained things (mini games, WebGL toys, demos).
@@ -110,7 +117,6 @@ server) — use plain `<img>` or unoptimized `next/image`.
 
 ## Content to preserve (keep the substance; redesign freely)
 
-**Brand:** "Kyle Skudlarek" + floppy-disk logo (`assets/floppylogo.png`). Favicon: `assets/icon.png`.
 
 **Home:** "Welcome to my digital zen garden. 🌱" / "I'm a full-stack software developer who
 works on generative AI, enterprise systems and web design. I like physics, philosophy,
@@ -131,8 +137,4 @@ http://mountvernonpc.com/). Cards link to `github.com/kyleskudlarek/<slug>`.
 - LinkedIn: _[Kyle to add URL]_
 - Instagram: _[Kyle to add URL]_
 
-**Assets on hand (`assets/`):** `bitmoji.svg` (home avatar), `kyle.jpg` (about photo),
-`floppylogo.png` (brand mark), `icon.png` (favicon), plus `github.png`, `reactIcon.svg`,
-`aws.svg` (tech/footer icons — use if useful). Design may replace any of these.
-
-**Dropped:** the old Gatsby blog and its placeholder posts.
+**Assets on hand (`assets/`):** `bitmoji.svg` (home avatar), `kyle.jpg` (about photo), 

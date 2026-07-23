@@ -1,0 +1,306 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   Palette sampled directly from the hero artwork, so the art and
+   the interface read as one object rather than a photo dropped
+   onto an unrelated theme.
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  --color-ink: #080d12;      /* page surface — near-black, blue cast */
+  --color-ground: #0b1a24;   /* elevated surfaces, hovers           */
+  --color-slate: #4a7a9b;    /* borders, tertiary text              */
+  --color-mist: #9baebb;     /* body text on dark                   */
+  --color-glow: #c8f0dc;     /* pale mint from the star swirls      */
+  --color-khaki: #8a8a4e;    /* olive grass — rare warm counterpoint */
+  --color-bright: #eaf3f5;   /* headings                            */
+
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    --hairline: color-mix(in srgb, var(--color-slate) 22%, transparent);
+    --gutter: clamp(1.5rem, 5vw, 5rem);
+    --shell: 78rem;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-mist);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+  }
+
+  ::selection {
+    background: var(--color-glow);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-glow);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* ── Shell ─────────────────────────────────────────────────── */
+  .shell {
+    max-width: var(--shell);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* ── Type ──────────────────────────────────────────────────── */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-glow);
+    opacity: 0.72;
+  }
+
+  .display {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    color: var(--color-bright);
+    font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+  }
+  /* The accent phrase inside a display heading. */
+  .display em {
+    font-style: normal;
+    color: var(--color-glow);
+  }
+
+  .lede {
+    max-width: 34rem;
+    font-size: clamp(0.98rem, 1.15vw, 1.0625rem);
+    line-height: 1.7;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-slate);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  /* ── Buttons ───────────────────────────────────────────────── */
+  .btn {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 0.7rem 1.15rem;
+    transition: all 0.35s var(--ease-out-expo);
+  }
+  .btn-primary {
+    background: var(--color-glow);
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+  .btn-primary:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    color: var(--color-mist);
+    border: 1px solid var(--hairline);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-slate);
+    color: var(--color-glow);
+  }
+
+  /* ── Hero ──────────────────────────────────────────────────────
+     Masked on BOTH edges: the artwork emerges from behind the nav
+     and dissolves into the page below, so it never reads as a
+     rectangle pasted onto the layout.
+     ──────────────────────────────────────────────────────────── */
+  .hero-art {
+    position: relative;
+    width: 100%;
+    height: clamp(32rem, 76vh, 50rem);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.14) 9%,
+      rgba(0, 0, 0, 0.6) 16%,
+      #000 25%,
+      #000 56%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.14) 9%,
+      rgba(0, 0, 0, 0.6) 16%,
+      #000 25%,
+      #000 56%,
+      transparent 100%
+    );
+  }
+
+  .hero-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% 22%;
+    will-change: transform;
+  }
+
+  /* Directional scrim: protects the text side only. The swirls and
+     mountains on the right stay completely untouched. */
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        102deg,
+        rgba(8, 13, 18, 0.93) 0%,
+        rgba(8, 13, 18, 0.78) 26%,
+        rgba(8, 13, 18, 0.34) 50%,
+        rgba(8, 13, 18, 0.04) 68%,
+        transparent 80%
+      ),
+      linear-gradient(to bottom, rgba(8, 13, 18, 0.55) 0%, transparent 22%);
+  }
+
+  /* ── Star twinkle ──────────────────────────────────────────── */
+  .stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .stars i {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: var(--color-glow);
+    animation: twinkle 4s ease-in-out infinite;
+  }
+
+  /* ── Cards ─────────────────────────────────────────────────── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+  .card {
+    display: block;
+    background: var(--color-ink);
+    padding: 1.75rem 1.5rem;
+    transition: background 0.4s var(--ease-out-expo);
+  }
+  .card:hover {
+    background: var(--color-ground);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MOTION
+   ───────────────────────────────────────────────────────────── */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1.09) translate3d(-1.2%, -1%, 0);
+  }
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.drift {
+  animation: drift 34s ease-in-out infinite alternate;
+}
+
+.rise {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 1s var(--ease-out-expo) forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   NARROW
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .hero-art {
+    height: 30rem;
+  }
+  /* Copy spans the full width here, so a left-to-right scrim has
+     nothing to protect. Swap to a vertical wash weighted to the top. */
+  .hero-scrim {
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 13, 18, 0.86) 0%,
+      rgba(8, 13, 18, 0.74) 38%,
+      rgba(8, 13, 18, 0.42) 62%,
+      rgba(8, 13, 18, 0.3) 100%
+    );
+  }
+}
+
+@media (max-width: 560px) {
+  /* The clamp() minimum is too large at phone widths. */
+  .display {
+    font-size: clamp(1.85rem, 8.4vw, 2.6rem);
+  }
+  .lede {
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift,
+  .stars i {
+    animation: none !important;
+  }
+  .rise {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  [data-parallax] {
+    transform: none !important;
+  }
+}
