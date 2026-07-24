@@ -5,7 +5,8 @@ import { projects } from '@/lib/projects'
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Software Kyle Skudlarek has built, with live GitHub star counts.',
+  description:
+    'Open-source projects by Kyle Skudlarek, including this website and a parametric 3D modeling app.',
 }
 
 export default function ProjectsPage() {
@@ -18,7 +19,8 @@ export default function ProjectsPage() {
             Things I&rsquo;ve <em>built.</em>
           </>
         }
-        intro="A running list of projects worth showing. Star counts are pulled live from GitHub."
+        intro="Open-source projects I&rsquo;ve made over the years, including this website, a
+        parametric 3D modeling app, and my first-ever site."
       />
       <section className="shell mt-[clamp(2.5rem,6vh,4rem)]">
         <div className="card-grid">

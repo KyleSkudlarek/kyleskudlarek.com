@@ -11,7 +11,7 @@
   --color-ground: #0b1a24;   /* elevated surfaces, hovers           */
   --color-slate: #4a7a9b;    /* borders, tertiary text              */
   --color-mist: #9baebb;     /* body text on dark                   */
-  --color-glow: #8bd09d;     /* meadow — hero grass hue, lifted for contrast (10.8:1 on ink) */
+  --color-glow: #e8c97a;     /* starlight gold — the stars/moon glow, split-complement to the blues (12.1:1 on ink) */
   --color-khaki: #8a8a4e;    /* olive grass — rare warm counterpoint */
   --color-bright: #eaf3f5;   /* headings                            */
 
@@ -130,9 +130,12 @@
   }
 
   /* ── Garden CTA ────────────────────────────────────────────────
-     A leaf, not a rectangle: fully rounded except one pinched
-     corner. Gradient and glow both derive from --color-glow so the
-     button follows any future accent swap. */
+     "Garden stone": a quiet dark slab with a hairline accent border
+     and a sharp bottom-left corner. On hover the accent sweeps
+     across like moonlight catching stone — an oversized two-stop
+     gradient slid via background-position — and the text flips to
+     ink. Everything derives from --color-glow so the button follows
+     any future accent swap. */
   .btn-garden {
     display: inline-flex;
     align-items: center;
@@ -142,26 +145,29 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-ink);
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-glow) 72%, #eaf3f5),
-      var(--color-glow) 45%,
-      color-mix(in srgb, var(--color-glow) 62%, #14532d)
-    );
+    color: var(--color-glow);
+    background:
+      linear-gradient(
+        110deg,
+        var(--color-glow) 0 50%,
+        color-mix(in srgb, var(--color-ground) 82%, #000) 50.5%
+      )
+      right / 205% 100% no-repeat;
+    border: 1px solid color-mix(in srgb, var(--color-glow) 45%, transparent);
     padding: 0.75rem 1.4rem;
-    border-radius: 999px 999px 999px 3px;
-    box-shadow: 0 0 0 0 transparent;
-    transition: all 0.35s var(--ease-out-expo);
+    border-radius: 8px 8px 8px 2px;
+    transition:
+      background-position 0.5s var(--ease-out-expo),
+      color 0.35s var(--ease-out-expo),
+      box-shadow 0.35s var(--ease-out-expo);
   }
   .btn-garden svg {
     transition: transform 0.35s var(--ease-out-expo);
   }
   .btn-garden:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 6px 26px color-mix(in srgb, var(--color-glow) 32%, transparent),
-      0 0 0 1px color-mix(in srgb, var(--color-glow) 55%, transparent);
+    background-position: left;
+    color: var(--color-ink);
+    box-shadow: 0 4px 22px color-mix(in srgb, var(--color-glow) 25%, transparent);
   }
   .btn-garden:hover svg {
     transform: rotate(-10deg);
@@ -213,13 +219,12 @@
     background:
       linear-gradient(
         102deg,
-        rgba(8, 13, 18, 0.93) 0%,
-        rgba(8, 13, 18, 0.78) 26%,
-        rgba(8, 13, 18, 0.34) 50%,
-        rgba(8, 13, 18, 0.04) 68%,
-        transparent 80%
+        rgba(8, 13, 18, 0.78) 0%,
+        rgba(8, 13, 18, 0.58) 26%,
+        rgba(8, 13, 18, 0.22) 50%,
+        transparent 66%
       ),
-      linear-gradient(to bottom, rgba(8, 13, 18, 0.55) 0%, transparent 22%);
+      linear-gradient(to bottom, rgba(8, 13, 18, 0.4) 0%, transparent 20%);
   }
 
   /* ── Star twinkle ──────────────────────────────────────────── */
@@ -238,22 +243,28 @@
     animation: twinkle 4s ease-in-out infinite;
   }
 
-  /* ── Cards ─────────────────────────────────────────────────── */
+  /* ── Cards ─────────────────────────────────────────────────────
+     Independent rounded outlines with real gaps (not a hairline-
+     backed lattice), so partial rows leave empty space instead of
+     a painted slab, and the grid reflows cleanly at any width. */
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1px;
-    background: var(--hairline);
-    border: 1px solid var(--hairline);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
   }
   .card {
     display: block;
     background: var(--color-ink);
-    padding: 1.75rem 1.5rem;
-    transition: background 0.4s var(--ease-out-expo);
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    padding: 1.6rem 1.5rem;
+    transition:
+      background 0.4s var(--ease-out-expo),
+      border-color 0.4s var(--ease-out-expo);
   }
   .card:hover {
     background: var(--color-ground);
+    border-color: color-mix(in srgb, var(--color-slate) 55%, transparent);
   }
 }
 
@@ -310,10 +321,10 @@
   .hero-scrim {
     background: linear-gradient(
       to bottom,
-      rgba(8, 13, 18, 0.86) 0%,
-      rgba(8, 13, 18, 0.74) 38%,
-      rgba(8, 13, 18, 0.42) 62%,
-      rgba(8, 13, 18, 0.3) 100%
+      rgba(8, 13, 18, 0.78) 0%,
+      rgba(8, 13, 18, 0.62) 38%,
+      rgba(8, 13, 18, 0.32) 62%,
+      rgba(8, 13, 18, 0.2) 100%
     );
   }
 }

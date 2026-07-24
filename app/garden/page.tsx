@@ -49,7 +49,7 @@ const PALETTE = [
   { hex: '#0B1A24', varName: '--color-ground', role: 'elevated surfaces' },
   { hex: '#4A7A9B', varName: '--color-slate', role: 'borders, tertiary' },
   { hex: '#9BAEBB', varName: '--color-mist', role: 'body text' },
-  { hex: '#8BD09D', varName: '--color-glow', role: 'accent' },
+  { hex: '#E8C97A', varName: '--color-glow', role: 'accent' },
   { hex: '#EAF3F5', varName: '--color-bright', role: 'headings' },
 ]
 
@@ -130,8 +130,8 @@ export default function GardenPage() {
         <SectionLabel>Palette</SectionLabel>
         <p className="m-0 mb-8 max-w-[38rem] text-[0.95rem] leading-[1.75]">
           Every color is sampled from the artwork, so the interface and the image read as one
-          object. The accent is the hue of the grass, lifted in lightness until it clears WCAG
-          AAA contrast on the page surface (10.8:1).
+          object. The accent is the gold of the stars and moon glow — a split-complement to
+          the blue field — at 12.1:1 contrast on the page surface, well past WCAG AAA.
         </p>
         <ul className="m-0 grid list-none grid-cols-2 gap-px bg-[var(--hairline)] border border-[var(--hairline)] p-0 sm:grid-cols-3 lg:grid-cols-6">
           {PALETTE.map((swatch) => (

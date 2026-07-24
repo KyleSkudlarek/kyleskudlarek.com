@@ -12,17 +12,31 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'skudlabs.com',
+    repo: 'skudlabs.com',
+    url: 'https://skudlabs.com/',
+    year: '2026',
+    blurb: 'My software consulting practice',
+  },
+  {
+    name: 'holderforge.com',
+    repo: 'holderforge',
+    url: 'https://www.holderforge.com/',
+    year: '2025',
+    blurb: 'Parametric 3D-printable bottle holders',
+  },
+  {
     name: 'kyleskudlarek.com',
     repo: 'kyleskudlarek.com',
     url: 'https://kyleskudlarek.com/',
     year: '2023',
-    blurb: 'This site. Next.js static export, self-hosted type, deployed to S3 + CloudFront.',
+    blurb: 'The source of this site',
   },
   {
     name: 'mountvernonpc.com',
     repo: 'mountvernonpc.com',
     url: 'http://mountvernonpc.com/',
     year: '2014',
-    blurb: 'An early client build, still online a decade later.',
+    blurb: 'My first website, old school',
   },
 ]
