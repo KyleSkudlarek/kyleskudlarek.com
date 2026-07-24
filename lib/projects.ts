@@ -12,6 +12,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'holderforge.com',
+    repo: 'holderforge',
+    url: 'https://www.holderforge.com/',
+    year: '2025',
+    blurb:
+      'Web UI for parametric 3D-printable bottle holders — dial in dimensions, get an STL model and an Autodesk Fusion script.',
+  },
+  {
     name: 'kyleskudlarek.com',
     repo: 'kyleskudlarek.com',
     url: 'https://kyleskudlarek.com/',
