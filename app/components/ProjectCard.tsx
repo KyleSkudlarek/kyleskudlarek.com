@@ -38,7 +38,8 @@ export default function ProjectCard({ project }: { project: Project }) {
         >
           {project.name}
         </a>
-        <span className="font-mono text-xs text-slate">
+        {/* Gold star — the card's one deliberate color accent. */}
+        <span className="font-mono text-xs text-glow">
           {stars !== null ? `★ ${stars}` : ''}
         </span>
       </div>

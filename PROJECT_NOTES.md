@@ -74,6 +74,32 @@ The notes set intent and constraints; the aesthetic execution is yours.
 
 ---
 
+## Tone of voice — the copy standard
+
+**The model is Tania Rascia** (https://www.taniarascia.com) — see Prior art. The style is
+**plainspoken**: simple, human, direct, never verbose. Kyle's copy already leans this way
+("Welcome to my spot on the web…", the digital-garden metaphor, "Hire me"); write ALL
+future copy to it.
+
+The rules, with her site as the reference:
+
+1. **Short declarative sentences, first person.** "I'm a software engineer, open-source
+   creator, and former professional chef." No throat-clearing, no qualifiers.
+2. **Descriptions are 2–6 word noun phrases.** "The source of this website" · "Retro game
+   emulator" · "Open source notes app". If a blurb needs a second clause, cut it.
+3. **Concrete beats abstract.** She lists a DDR machine, an accordion, and cats — not
+   "diverse interests." Name the real thing.
+4. **Personality in small doses.** One playful beat per page is plenty ("Play the accordion
+   online!", "Your new favorite theme"). Enthusiasm, never salesmanship.
+5. **No marketing language.** No "leverage", "solutions", "passionate about". Values can be
+   stated as plain refusals ("no ads, no tracking, no paywall").
+6. **Warmth over polish.** "Hey, I'm Tania!" A human wrote it and it should read that way.
+
+Litmus test for any new copy: read it aloud — if it sounds like a person explaining their
+site to a friend, ship it; if it sounds like a landing page, rewrite it.
+
+---
+
 ## Decisions we aligned on
 
 - **Framework: Next.js (App Router), static export** (`output: 'export'`). Chosen over
@@ -263,6 +289,13 @@ a reason.
 ## Prior art worth studying (ranked)
 
 Ranked by how well-known they are *and* how close they sit to what Kyle wants to build.
+
+**0. Tania Rascia** — https://www.taniarascia.com ⭐ *the tone-of-voice model*
+A personal site + digital garden with the exact voice this site aims for (see **Tone of
+voice** above) and the projects-page pattern we adopted: rounded outline cards that
+auto-collapse into rows, 2–6 word descriptions, a single color accent on the star count.
+Her hero copy ("Welcome to my spot on the web…") is the direct ancestor of Kyle's. *Tech:*
+Gatsby-class static React blog. Study for **copy, card design, and personal-site IA**.
 
 **1. Bartosz Ciechanowski** — https://ciechanow.ski
 The gold standard for interactive explainers (gears, bicycles, GPS, engines). Every diagram
