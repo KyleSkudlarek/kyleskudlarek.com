@@ -11,7 +11,7 @@
   --color-ground: #0b1a24;   /* elevated surfaces, hovers           */
   --color-slate: #4a7a9b;    /* borders, tertiary text              */
   --color-mist: #9baebb;     /* body text on dark                   */
-  --color-glow: #8bd09d;     /* meadow — hero grass hue, lifted for contrast (10.8:1 on ink) */
+  --color-glow: #e8c97a;     /* starlight gold — the stars/moon glow, split-complement to the blues (12.1:1 on ink) */
   --color-khaki: #8a8a4e;    /* olive grass — rare warm counterpoint */
   --color-bright: #eaf3f5;   /* headings                            */
 
@@ -213,13 +213,12 @@
     background:
       linear-gradient(
         102deg,
-        rgba(8, 13, 18, 0.93) 0%,
-        rgba(8, 13, 18, 0.78) 26%,
-        rgba(8, 13, 18, 0.34) 50%,
-        rgba(8, 13, 18, 0.04) 68%,
-        transparent 80%
+        rgba(8, 13, 18, 0.78) 0%,
+        rgba(8, 13, 18, 0.58) 26%,
+        rgba(8, 13, 18, 0.22) 50%,
+        transparent 66%
       ),
-      linear-gradient(to bottom, rgba(8, 13, 18, 0.55) 0%, transparent 22%);
+      linear-gradient(to bottom, rgba(8, 13, 18, 0.4) 0%, transparent 20%);
   }
 
   /* ── Star twinkle ──────────────────────────────────────────── */
@@ -310,10 +309,10 @@
   .hero-scrim {
     background: linear-gradient(
       to bottom,
-      rgba(8, 13, 18, 0.86) 0%,
-      rgba(8, 13, 18, 0.74) 38%,
-      rgba(8, 13, 18, 0.42) 62%,
-      rgba(8, 13, 18, 0.3) 100%
+      rgba(8, 13, 18, 0.78) 0%,
+      rgba(8, 13, 18, 0.62) 38%,
+      rgba(8, 13, 18, 0.32) 62%,
+      rgba(8, 13, 18, 0.2) 100%
     );
   }
 }
