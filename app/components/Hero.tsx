@@ -63,14 +63,18 @@ export default function Hero() {
             Welcome to my <em>digital zen garden.</em>
           </h1>
           <p className="lede rise m-0" style={{ animationDelay: '0.34s' }}>
-            I&rsquo;m a full-stack software developer working on generative AI, enterprise
-            systems, and web design. I like physics, philosophy, cooking, lifting weights, and
-            stand-up comedy.
+            I like building things at the intersection of engineering and design. This is home
+            base for my projects, experiments, and whatever I&rsquo;m currently curious about.
           </p>
           <div className="rise flex flex-wrap items-center gap-3" style={{ animationDelay: '0.46s' }}>
-            {/* Single CTA — Projects lives in the nav. */}
-            <Link href="/about/" className="btn btn-primary no-underline">
-              About me
+            {/* Single CTA, leaf-shaped — the front gate into the content hub. */}
+            <Link href="/garden/" className="btn-garden no-underline">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 14.5V7.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M8 8.5C8 5.2 5.8 3 2.2 3c0 3.7 2.3 5.5 5.8 5.5Z" fill="currentColor" />
+                <path d="M8 6.8c0-2.6 2-4.6 5.6-4.6 0 3.6-2.1 5.6-5.6 4.6Z" fill="currentColor" />
+              </svg>
+              Enter the garden
             </Link>
           </div>
         </div>

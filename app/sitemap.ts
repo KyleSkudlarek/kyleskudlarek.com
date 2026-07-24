@@ -6,7 +6,7 @@ export const dynamic = 'force-static'
 // Emitted as /sitemap.xml at build time. Add new routes here as pages ship.
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://kyleskudlarek.com'
-  const routes = ['', '/about', '/projects']
+  const routes = ['', '/about', '/projects', '/garden']
   return routes.map((route) => ({
     url: `${base}${route}/`,
     changeFrequency: 'monthly',
