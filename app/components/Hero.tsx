@@ -62,7 +62,12 @@ export default function Hero() {
           <h1 className="display rise m-0" style={{ animationDelay: '0.22s' }}>
             Welcome to my <em>digital zen garden.</em>
           </h1>
-          <p className="lede rise m-0" style={{ animationDelay: '0.34s' }}>
+          {/* Over the artwork the muted body color washes out — go bright
+              with a soft shadow, like the nav links above the art. */}
+          <p
+            className="lede rise m-0 text-bright [text-shadow:0_1px_12px_rgba(8,13,18,0.9)]"
+            style={{ animationDelay: '0.34s' }}
+          >
             I like building things at the intersection of engineering and design. This is home
             base for my projects, experiments, and whatever I&rsquo;m currently curious about.
           </p>
