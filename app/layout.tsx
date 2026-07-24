@@ -7,7 +7,8 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://kyleskudlarek.com'),
   title: {
-    default: `${site.name} — ${site.role}`,
+    // Home tab shows just the name; interior pages keep "Page — Name".
+    default: site.name,
     template: `%s — ${site.name}`,
   },
   description:

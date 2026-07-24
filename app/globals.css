@@ -130,9 +130,12 @@
   }
 
   /* ── Garden CTA ────────────────────────────────────────────────
-     A leaf, not a rectangle: fully rounded except one pinched
-     corner. Gradient and glow both derive from --color-glow so the
-     button follows any future accent swap. */
+     "Garden stone": a quiet dark slab with a hairline accent border
+     and a sharp bottom-left corner. On hover the accent sweeps
+     across like moonlight catching stone — an oversized two-stop
+     gradient slid via background-position — and the text flips to
+     ink. Everything derives from --color-glow so the button follows
+     any future accent swap. */
   .btn-garden {
     display: inline-flex;
     align-items: center;
@@ -142,26 +145,29 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-ink);
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-glow) 72%, #eaf3f5),
-      var(--color-glow) 45%,
-      color-mix(in srgb, var(--color-glow) 62%, #14532d)
-    );
+    color: var(--color-glow);
+    background:
+      linear-gradient(
+        110deg,
+        var(--color-glow) 0 50%,
+        color-mix(in srgb, var(--color-ground) 82%, #000) 50.5%
+      )
+      right / 205% 100% no-repeat;
+    border: 1px solid color-mix(in srgb, var(--color-glow) 45%, transparent);
     padding: 0.75rem 1.4rem;
-    border-radius: 999px 999px 999px 3px;
-    box-shadow: 0 0 0 0 transparent;
-    transition: all 0.35s var(--ease-out-expo);
+    border-radius: 8px 8px 8px 2px;
+    transition:
+      background-position 0.5s var(--ease-out-expo),
+      color 0.35s var(--ease-out-expo),
+      box-shadow 0.35s var(--ease-out-expo);
   }
   .btn-garden svg {
     transition: transform 0.35s var(--ease-out-expo);
   }
   .btn-garden:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 6px 26px color-mix(in srgb, var(--color-glow) 32%, transparent),
-      0 0 0 1px color-mix(in srgb, var(--color-glow) 55%, transparent);
+    background-position: left;
+    color: var(--color-ink);
+    box-shadow: 0 4px 22px color-mix(in srgb, var(--color-glow) 25%, transparent);
   }
   .btn-garden:hover svg {
     transform: rotate(-10deg);
