@@ -3,9 +3,9 @@ import { links } from '@/lib/site'
 // The annotated "find me elsewhere" hub. One line of context per link is what
 // separates this from a linktree. Used on both home and About.
 //
-// `prominent` (home): a display heading + larger rows so the section carries
-// real weight as the page's connect moment. Default (About): the quiet mono
-// label, since the page already leads with its own h1.
+// `prominent` (home + About): a display heading + larger rows so the section
+// carries real weight as the page's connect moment. Default: the quiet mono
+// label, kept for any future page that already leads with its own h1.
 export default function Elsewhere({ prominent = false }: { prominent?: boolean }) {
   return (
     <section className="shell mt-24">

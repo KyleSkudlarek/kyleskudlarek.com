@@ -47,7 +47,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Elsewhere />
+      <Elsewhere prominent />
     </main>
   )
 }

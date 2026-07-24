@@ -157,8 +157,10 @@ http://mountvernonpc.com/). Cards link to `github.com/kyleskudlarek/<slug>`.
 
 Next.js 16 App Router, static export, Tailwind v4, TypeScript.
 
-**Pages:** `/` (hero + My Links) · `/about` · `/projects` · 404.
-**Nav:** About · Projects — intentionally tiny. Garden joins as the 3rd.
+**Pages:** `/` (hero + My Links) · `/about` · `/projects` · `/garden` (colophon — "how this
+site is built" — until the MDX pipeline lands, then it becomes the post index) · 404.
+**Nav:** About · Projects · Garden — complete. New content types become Garden filter
+chips, never nav items. Hero CTA is a leaf-shaped "Enter the garden" button (`.btn-garden`).
 
 **Design decisions already locked:**
 - **Hero — "cinematic band."** Full-bleed art, contained height, masked on *both*
@@ -170,7 +172,8 @@ Next.js 16 App Router, static export, Tailwind v4, TypeScript.
   and metadata. Chosen over an editorial serif after building a side-by-side lab.
 - **Palette** (sampled from the hero art, tokens in `app/globals.css`):
   `--ink #080D12` · `--ground #0B1A24` · `--slate #4A7A9B` · `--mist #9BAEBB` ·
-  `--glow #C8F0DC` (mint accent) · `--khaki #8A8A4E` (rare warm).
+  `--glow #8BD09D` ("meadow" — grass hue lifted to 10.8:1 on ink; was pale mint #C8F0DC) ·
+  `--khaki #8A8A4E` (rare warm).
 - **Heading pattern:** white text with the key phrase in `--glow` green
   (`<em>` inside `.display`) — used by every page title. Keep it consistent.
 - **My Links:** annotated (one line of context per link) — that annotation is what keeps

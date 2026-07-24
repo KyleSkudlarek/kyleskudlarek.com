@@ -11,7 +11,7 @@
   --color-ground: #0b1a24;   /* elevated surfaces, hovers           */
   --color-slate: #4a7a9b;    /* borders, tertiary text              */
   --color-mist: #9baebb;     /* body text on dark                   */
-  --color-glow: #c8f0dc;     /* pale mint from the star swirls      */
+  --color-glow: #8bd09d;     /* meadow — hero grass hue, lifted for contrast (10.8:1 on ink) */
   --color-khaki: #8a8a4e;    /* olive grass — rare warm counterpoint */
   --color-bright: #eaf3f5;   /* headings                            */
 
@@ -127,6 +127,44 @@
   .btn-ghost:hover {
     border-color: var(--color-slate);
     color: var(--color-glow);
+  }
+
+  /* ── Garden CTA ────────────────────────────────────────────────
+     A leaf, not a rectangle: fully rounded except one pinched
+     corner. Gradient and glow both derive from --color-glow so the
+     button follows any future accent swap. */
+  .btn-garden {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-glow) 72%, #eaf3f5),
+      var(--color-glow) 45%,
+      color-mix(in srgb, var(--color-glow) 62%, #14532d)
+    );
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px 999px 999px 3px;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.35s var(--ease-out-expo);
+  }
+  .btn-garden svg {
+    transition: transform 0.35s var(--ease-out-expo);
+  }
+  .btn-garden:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 26px color-mix(in srgb, var(--color-glow) 32%, transparent),
+      0 0 0 1px color-mix(in srgb, var(--color-glow) 55%, transparent);
+  }
+  .btn-garden:hover svg {
+    transform: rotate(-10deg);
   }
 
   /* ── Hero ──────────────────────────────────────────────────────
