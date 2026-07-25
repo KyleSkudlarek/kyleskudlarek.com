@@ -19,7 +19,7 @@ export default function AboutPage() {
         }
       />
 
-      <section className="shell mt-[clamp(2.5rem,6vh,4rem)] grid gap-x-16 gap-y-10 md:grid-cols-[minmax(0,1fr)_16rem]">
+      <section className="shell mt-[clamp(2.5rem,6vh,4rem)] grid items-start gap-x-16 gap-y-10 md:grid-cols-[minmax(0,38rem)_minmax(0,20rem)]">
         <div className="flex max-w-[38rem] flex-col gap-5 text-[1.02rem] leading-[1.75]">
           <p className="m-0">
             I&rsquo;m a software developer working remotely in Austin, TX. Welcome to my spot on
@@ -32,13 +32,16 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Photo. Plain img: static export ships pre-optimized WebP. */}
-        <div className="order-first md:order-none">
+        {/* Photo. Plain img: static export ships pre-optimized WebP.
+            The negative top margin equals this section's top margin plus the
+            header's display line height, so the photo's top edge sits level
+            with the headline. Keep it in sync with PageHeader and .display. */}
+        <div className="order-first md:order-none md:mt-[calc(-1*(clamp(2.5rem,6vh,4rem)+clamp(2.4rem,5.4vw,4.4rem)))]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/about.webp"
             alt="Kyle Skudlarek"
-            className="aspect-square w-full max-w-[16rem] rounded-sm border border-[var(--hairline)] object-cover"
+            className="aspect-square w-full max-w-[20rem] rounded-sm border border-[var(--hairline)] object-cover"
           />
         </div>
       </section>
