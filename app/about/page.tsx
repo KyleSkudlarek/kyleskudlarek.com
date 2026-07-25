@@ -30,10 +30,6 @@ export default function AboutPage() {
             full-stack, end to end. Outside the terminal I&rsquo;m into physics, philosophy,
             cooking, lifting weights, and stand-up comedy.
           </p>
-          <p className="m-0">
-            This site is also a playground. Expect it to grow &mdash; writing, experiments, and
-            the side projects I keep threatening to ship.
-          </p>
         </div>
 
         {/* Photo. Plain img: static export ships pre-optimized WebP. */}

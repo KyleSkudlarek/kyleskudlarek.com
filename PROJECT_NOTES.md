@@ -186,7 +186,9 @@ Next.js 16 App Router, static export, Tailwind v4, TypeScript.
 **Pages:** `/` (hero + My Links) · `/about` · `/projects` · `/garden` (colophon — "how this
 site is built" — until the MDX pipeline lands, then it becomes the post index) · 404.
 **Nav:** About · Projects · Garden — complete. New content types become Garden filter
-chips, never nav items. Hero CTA is a leaf-shaped "Enter the garden" button (`.btn-garden`).
+chips, never nav items. Hero CTA is the "garden stone" (`.btn-garden`): dark slab, hairline
+gold border, sharp bottom-left corner, accent sweeps across on hover (chosen over leaf-pill,
+firefly, and gate variants in a side-by-side).
 
 **Design decisions already locked:**
 - **Hero — "cinematic band."** Full-bleed art, contained height, masked on *both*
@@ -204,8 +206,8 @@ chips, never nav items. Hero CTA is a leaf-shaped "Enter the garden" button (`.b
 - **Heading pattern:** white text with the key phrase in `--glow` green
   (`<em>` inside `.display`) — used by every page title. Keep it consistent.
 - **My Links:** annotated (one line of context per link) — that annotation is what keeps
-  it from reading as a linktree. `prominent` variant on home (display heading, big rows),
-  quiet mono label on About.
+  it from reading as a linktree. Both home and About use the `prominent` variant (display
+  heading, big rows); blurbs are 2–6 word noun phrases per the tone standard.
 - **Projects cards:** title → live hosted site, "Source" → GitHub, live star counts
   fetched client-side.
 - Footer is copyright only, by choice.
