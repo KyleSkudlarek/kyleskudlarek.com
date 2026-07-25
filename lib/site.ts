@@ -29,7 +29,7 @@ export const links: Link[] = [
     label: 'Skudlabs',
     href: 'https://skudlabs.com',
     handle: 'skudlabs.com',
-    blurb: 'Hire me to build something!',
+    blurb: 'Hire me to build something - custom software, websites, and AI for small businesses',
   },
   {
     label: 'LinkedIn',

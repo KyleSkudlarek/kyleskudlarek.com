@@ -16,7 +16,9 @@ const STARS = Array.from({ length: 18 }, (_, i) => ({
 export default function Hero() {
   const artRef = useRef<HTMLImageElement>(null)
 
-  // Gentle scroll parallax on the artwork layer.
+  // Gentle scroll parallax on the artwork layer. The offset must be exactly
+  // zero at scrollY 0: the server-rendered frame has no inline translate, so
+  // any nonzero offset here would land as a visible nudge at hydration.
   useEffect(() => {
     const el = artRef.current
     if (!el) return
@@ -24,9 +26,7 @@ export default function Hero() {
 
     let ticking = false
     const update = () => {
-      const r = el.getBoundingClientRect()
-      const progress = (r.top + r.height / 2 - innerHeight / 2) / innerHeight
-      el.style.translate = `0 ${(-progress * 26).toFixed(2)}px`
+      el.style.translate = `0 ${((scrollY / innerHeight) * 26).toFixed(2)}px`
       ticking = false
     }
     const onScroll = () => {
