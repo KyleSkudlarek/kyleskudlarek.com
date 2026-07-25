@@ -73,6 +73,30 @@ desktop widths; see the headless-Chrome gotcha before trusting mobile shots.
   no knowledge of any conversation. Document the why, invariants, and edge cases;
   never reference the request, the change history, or restate the code.
 
+## Auto-commit at the end of each work tranche (durable authorization)
+
+At the **end of a tranche of work** (a prompt → response cycle that produced file
+changes forming a coherent unit), **proactively commit and push without waiting to
+be asked.** Specifically:
+
+1. Briefly summarize what changed in the chat.
+2. Stage the related files, write a clear commit message in the repo's style
+   (short descriptive subject, body only when the why isn't obvious; end with the
+   `Co-Authored-By` trailer), and **commit + `git push origin master`.**
+3. Confirm the push in the response.
+
+Rules:
+
+- **Target branch = `master`.** Solo repo — no separate branch/PR unless Kyle asks.
+- **Pushing does not deploy.** Production only changes via `npm run deploy`
+  (S3 sync + CloudFront invalidation), so a push is always safe to make. Deploy
+  when the tranche changed the site and is ready to be public — or when Kyle says
+  `/ship` — and confirm the invalidation ran. Docs-only changes (README, CLAUDE.md,
+  PROJECT_NOTES.md) never need a deploy.
+- **Skip** trivial/no-op turns, pure Q&A/strategy chats with no file changes, and
+  anything Kyle says to keep local. Never commit secrets.
+- Kyle can always override per-change: "don't commit this" / "keep it local."
+
 ## Keeping this file current
 
 When a session hits a real gotcha (something that broke and cost time to diagnose)
