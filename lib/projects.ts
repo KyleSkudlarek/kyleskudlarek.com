@@ -12,6 +12,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'kyleskudlarek.com',
+    repo: 'kyleskudlarek.com',
+    url: 'https://kyleskudlarek.com/',
+    year: '2023',
+    blurb: 'The source of this site',
+  },
+  {
     name: 'skudlabs.com',
     repo: 'skudlabs.com',
     url: 'https://skudlabs.com/',
@@ -24,13 +31,6 @@ export const projects: Project[] = [
     url: 'https://www.holderforge.com/',
     year: '2025',
     blurb: 'Parametric 3D-printable bottle holders',
-  },
-  {
-    name: 'kyleskudlarek.com',
-    repo: 'kyleskudlarek.com',
-    url: 'https://kyleskudlarek.com/',
-    year: '2023',
-    blurb: 'The source of this site',
   },
   {
     name: 'mountvernonpc.com',
