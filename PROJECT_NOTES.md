@@ -98,6 +98,12 @@ The rules, with her site as the reference:
 Litmus test for any new copy: read it aloud — if it sounds like a person explaining their
 site to a friend, ship it; if it sounds like a landing page, rewrite it.
 
+**Exception — personal-tool pages (e.g. /garden/atx-social-calendar/).** Garden
+experiments whose primary user is Kyle himself are written as reference material:
+descriptive, near-formal labels and factual notes ("Weekly schedule", "Unscheduled",
+"see Instagram"). No casual asides, no emoji, no copy addressed to an imagined visitor.
+The tone standard above applies to audience-facing copy only.
+
 ---
 
 ## Decisions we aligned on
@@ -183,8 +189,9 @@ http://mountvernonpc.com/). Cards link to `github.com/kyleskudlarek/<slug>`.
 
 Next.js 16 App Router, static export, Tailwind v4, TypeScript.
 
-**Pages:** `/` (hero + My Links) · `/about` · `/projects` · `/garden` (colophon — "how this
-site is built" — until the MDX pipeline lands, then it becomes the post index) · 404.
+**Pages:** `/` (hero + My Links) · `/about` · `/projects` · `/garden` (post index —
+filter chips, search, sort; posts listed in `lib/garden.ts`) · `/garden/colophon` ·
+`/garden/atx-social-calendar` (weekly social-schedule mini-app, data in its `data.ts`) · 404.
 **Nav:** About · Projects · Garden — complete. New content types become Garden filter
 chips, never nav items. Hero CTA is the "garden stone" (`.btn-garden`): dark slab, hairline
 gold border, sharp bottom-left corner, accent sweeps across on hover (chosen over leaf-pill,

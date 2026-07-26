@@ -46,7 +46,7 @@ otherwise stale assets get served.
   from `--color-glow` via `color-mix` (mix toward `#000`/`#fff`/other tokens only).
   A hardcoded green mix in the CTA gradient survived an accent swap and left a
   green cast that had to be diagnosed later.
-- **`app/garden/page.tsx` (colophon) hardcodes palette hexes, the contrast ratio,
+- **`app/garden/colophon/page.tsx` (colophon) hardcodes palette hexes, the contrast ratio,
   and the accent's origin story.** Changing any design token means updating the
   colophon too. It also deliberately omits AWS account/distribution IDs — keep it that way.
 - **Headless Chrome clamps `--window-size` to ~500px wide.** Screenshots at
