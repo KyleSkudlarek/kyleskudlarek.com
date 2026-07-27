@@ -161,9 +161,6 @@ export default function GardenIndex({ posts }: { posts: GardenPost[] }) {
                   <p className="m-0 mt-1.5 max-w-[38rem] text-sm leading-[1.7] text-mist/80">
                     {post.summary}
                   </p>
-                  <p className="m-0 mt-3 font-mono text-[0.62rem] tracking-[0.08em] text-slate">
-                    {post.tags.map((tag) => `#${tag}`).join('  ')}
-                  </p>
                 </div>
               </div>
             </Link>
